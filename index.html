@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 	 
-    <style>
+       <style>
         /* --- USTAWIENIA OGÓLNE I KOLORY --- */
         :root {
             --primary-color: #800020; /* Bordowy / Burgundy */
@@ -307,7 +307,7 @@
 
     <section id="rsvp" class="section">
         <h2 class="section-title">Potwierdzenie</h2>
-        <p>Będzie nam niezmiernie miło, jeśli potwierdzicie swoją obecność do 1 listopada 2025 roku.</p>
+        <p>Będzie nam niezmiernie miło, jeśli potwierdzicie swoją obecność do 30 października 2026 roku.</p>
         <p style="margin-top: 20px;">Kliknij poniżej, aby otworzyć formularz:</p>
         <a href="https://forms.gle/HJLPzkZZjoW7Gyj46" target="_blank" class="btn">Wypełnij formularz RSVP</a>
     </section>
@@ -316,10 +316,16 @@
         <h2 class="section-title">Sprawy Organizacyjne</h2>
         
         <div class="locations">
-            <div class="card">
+            <div class="card" style="display: none;">
                 <h3>Prezenty</h3>
                 <p>Zamiast kwiatów ucieszą nas <strong>zdrapki Lotto</strong> – może to właśnie z Wami wygramy miliony!</p>
                 <p style="margin-top: 10px;">Jeśli chcecie nas obdarować czymś więcej, będziemy wdzięczni za wkład do "koperty marzeń".</p>
+            </div>
+			
+			<div class="card">
+                <h3>Prezenty</h3> 
+                <p><img src="nowe_pikt.png" alt="Zamiast kwiatów prosimy o zdrapki albo kupony lotto" height="100px"></p>
+                <p><img src="nowe_pikt2.png" alt="Zamiast prezentów prosimy o pieniądze na zakup mieszkania" height="100px"></p>
             </div>
 
             <div class="card">
@@ -336,7 +342,7 @@
 			
             <div class="card">
                 <h3>Sala zabaw</h3>
-                <p>Sala weselna zapewnia salę zabaw dla najmlodszych</p>
+                <p>Sala weselna zapewnia salę zabaw dla najmłodszych</p>
                 <p style="margin-top: 10px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             </div>		
     </section>
@@ -354,7 +360,7 @@
 
             <div class="card">
                 <h3>Tort & Słodkości</h3>
-                <p><strong>My Sweet Life Słodkie Dekoracje Basi - Barbara Buda</strong></p>
+                <p><strong>My Sweet Life Słodkie Dekoracje Basi <br> Barbara Buda</strong></p>
                 <a href="https://www.facebook.com/barbarabuda2002?locale=pl_PL" target="_blank" 
 				class="btn">Facebook</a>
             </div>
@@ -367,7 +373,7 @@
 
             <div class="card">
                 <h3>Muzyka</h3>
-                <p><strong>DJ Baca</strong></p>
+                <p><strong>DJ Baca <br> Robert Jaguś-Jagiełka</strong></p>
                 <a href="https://djbaca.pl" target="_blank" class="btn">Zobacz stronę</a>
             </div>
         </div>
@@ -380,8 +386,8 @@
                 Wasze spojrzenie na nasz ślub jest dla nas najcenniejszą pamiątką. 
                 Będziemy wdzięczni za każde ujęcie przesłane do wspólnego albumu!
             </p>
-            
-            <a href="https://drive.google.com/drive/folders/1H5aiX3gUl4Em3HVkdM_BZb9LyVuvTU9T?usp=sharing" target="_blank" class="btn" style="padding: 18px 50px; font-weight: 600; letter-spacing: 1px;">
+        <!--Wstaw link-->   
+            <a href="link do folderu na dysku" target="_blank" class="btn" style="padding: 18px 50px; font-weight: 600; letter-spacing: 1px;">
                 DODAJ ZDJĘCIA NA DYSK
             </a>
             
@@ -392,7 +398,8 @@
         
                     <h2 class="section-title" style="margin-bottom: 20px;">Nasza Galeria</h2>
                     <p style="margin-bottom: 20px;">Tutaj po weselu pojawią się zdjęcia od naszego fotografa.</p>
-                    <a href="https://drive.google.com/drive/folders/TWOJ_LINK_DO_DYSKU" target="_blank" class="btn" style="padding: 18px 50px; font-weight: 600; letter-spacing: 1px;">
+		<!--Usuń onclick i opacity; zamist # na link -->
+				    <a href="#" target="_blank" onclick="return false;" class="btn" style="padding: 18px 50px; font-weight: 600; letter-spacing: 1px; opacity: 0.6;">
                 DOSTĘPNE PO ŚLUBIE</a>
 			</div>
     </section>
@@ -400,17 +407,17 @@
 <section id="contact" class="section">
         <h2 class="section-title">Kontakt</h2>
         <p style="margin-bottom: 40px;">W razie jakichkolwiek pytań, jesteśmy do Waszej dyspozycji:</p>
-        
+        <!--Uzupełnij numery--> 
         <div class="locations">
             <div class="card">
                 <h3>Para Młoda</h3>
-                <p><strong>Julia:</strong> <a href="tel:+48000000000" style="color: inherit; text-decoration: none;">+48 000 000 000</a></p>
+                <p><strong>Julia:</strong> <a href="tel:+48603272075" style="color: inherit; text-decoration: none;">+48 603 272 075</a></p>
                 <p><strong>Krystian:</strong> <a href="tel:+48000000000" style="color: inherit; text-decoration: none;">+48 000 000 000</a></p>
             </div>
 
             <div class="card">
                 <h3>Świadkowie</h3>
-                <p><strong>Wiktoria:</strong> <a href="tel:+48000000000" style="color: inherit; text-decoration: none;">+48 000 000 000</a></p>
+                <p><strong>Wiktoria:</strong> <a href="tel:+48530186007" style="color: inherit; text-decoration: none;">+48 530 186 007</a></p>
                 <p><strong>Kacper:</strong> <a href="tel:+48000000000" style="color: inherit; text-decoration: none;">+48 000 000 000</a></p>
                 <p style="font-size: 0.8rem; margin-top: 10px; font-style: italic;">(Kontakt w sprawach organizacyjnych w dniu ślubu)</p>
             </div>
@@ -422,6 +429,7 @@
         <p>Nie możemy sie doczekać!</p>
         <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">© 2026 Strona Ślubna</p>
     </footer>
+
 
     <script>
         // --- 1. OBSŁUGA MENU MOBILNEGO ---
@@ -441,14 +449,56 @@
             navMenu.classList.remove("active");
         }));
 		// --- LISTA GOŚCI (UZUPEŁNIJ TUTAJ) ---
-        const guests = {
-            "julia belcik": 1,
-            "krystian józefowicz": 1,
-            "adam nowak": 2,
-            "ewa nowak": 2,
-            "julia nowak": 5,
-            "krystian nowak": 5
-        };
+const guests = {
+    "julia belcik": 1,
+    "krystian józefowicz": 1,
+    "agata belcik": 0,
+    "artur belcik": 0,
+    "edyta józefowicz": 0,
+    "grzegorz józefowicz": 0,
+    "wiktoria belcik": 0,
+    "krzysztof buda": 0,
+    "kacper józefowicz": 0,
+    "maria rogala": 0,
+    "dariusz rogala": 0,
+    "anna gunia": 0,
+    "tomasz gunia": 0,
+    "staś gunia": 0,
+    "jaś gunia": 0,
+    "paulina rogala": 0,
+    "filip czarnik": 0,
+    "tobiasz czarnik": 0,
+    "łukasz braja": 0,
+    "renata braja": 0,
+    "helena rogala": 0,
+    "rafał rogala": 0,
+    "agnieszka rogala": 0,
+    "eryk rogala": 0,
+    "janina belcik": 0,
+    "zdzisław belcik": 0,
+    "michalina belcik": 0,
+    "tomasz belcik": 0,
+    "kinga belcik": 0,
+    "zuzanna belcik": 0,
+    "jabuk belcik": 0,
+    "iwona drozd": 0,
+    "marcin drozd": 0,
+    "jolanta cysarz": 0,
+    "piotr cysarz": 0,
+    "paweł cysarz": 0,
+    "łukasz cysarz": 0,
+    "anna sobieszczyk": 0,
+    "mateusz krępulec": 0,
+    "oliwia sobieszczyk": 0,
+    "maja sobieszczyk": 0,
+    "lila krępulec": 0,
+    "oliwier krępulec": 0,
+    "mariola aszklar": 0,
+    "mirosław aszklar": 0,
+    "magdalena aszklar": 0,
+    "mateusz aszklar": 0,
+    "przemysław marczak": 0
+};
 
         function searchTable() {
             const input = document.getElementById('guest-input').value.toLowerCase().trim();
