@@ -241,8 +241,19 @@
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 3.5rem; }
-            .locations { grid-template-columns: 1fr; }
+            
+            .locations { 
+                grid-template-columns: 1fr; /* Ustawia karty jedna pod drugą */
+                gap: 20px; /* Zmniejsza odstępy między kartami na telefonie */
+            }
+
+            .card {
+                width: 100%; /* Wymusza pełną szerokość karty */
+                padding: 20px; /* Zmniejsza wewnętrzne marginesy kart na telefonie, żeby było więcej miejsca na tekst */
+            }
+
             .section-title { font-size: 2.5rem; }
+        } 
 
     </style>
 </head>
