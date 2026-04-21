@@ -37,7 +37,7 @@
             font-weight: 400;
         }
 
-        /* --- NAWIGACJA (NOWOŚĆ) --- */
+        /* --- NAWIGACJA --- */
         .navbar {
             position: fixed;
             top: 0;
@@ -131,6 +131,8 @@
             color: var(--white);
             text-align: center;
         }
+		
+
 
         .hero h1 {
             font-size: 5rem;
@@ -256,6 +258,7 @@
             .section-title { font-size: 2.5rem; }
         } 
 
+
     </style>
 </head>
 <body>
@@ -305,25 +308,30 @@
         </div>
     </section>
 
-    <section id="tables" class="section" style="background-color: #f2efe9; display: none;"> <!--Usuń display-->
-        <h2 class="section-title">Twój Stolik</h2>
-        <p style="margin-bottom: 25px;">Wpisz swoje imię i nazwisko, aby sprawdzić, gdzie siedzisz:</p>
-        <div class="table-search-container">
-            <input type="text" id="guest-input" placeholder="Np. Jan Kowalski" oninput="searchTable()">
-            <div id="table-result">
-                <small>Twój numer stolika to:</small>
-                <div id="table-number" style="font-size: 3rem; font-weight: bold;">-</div>
-            </div>
-        </div>
-    </section>
-
     <section id="rsvp" class="section">
         <h2 class="section-title">Potwierdzenie</h2>
         <p>Będzie nam niezmiernie miło, jeśli potwierdzicie swoją obecność do <br>30 października 2026 roku.</p>
         <p style="margin-top: 20px;">Kliknij poniżej, aby otworzyć formularz:</p>
         <a href="https://forms.gle/HJLPzkZZjoW7Gyj46" target="_blank" class="btn">Wypełnij formularz RSVP</a>
     </section>
+	 	<!--Zamień RSVP na stoliki-->   
+    <section id="tables" class="section" style="background-color: #f2efe9; display: none;"> <!--Usuń display-->
+        <h2 class="section-title">Twój Stolik</h2>
+        <p style="margin-bottom: 25px;">Wpisz swoje imię i nazwisko, aby sprawdzić, gdzie siedzisz:</p>
+		 	<!--Usuń przed weselem-->     <p style="font-size: 0.85rem; color: #888; margin-bottom: 25px; font-style: italic;">
+        (Wyszukiwarka zostanie uruchomiona tuż przed weselem)
+    </p> <!--U-->
+        <div class="table-search-container">
+<input type="text" id="guest-input" placeholder="Np. Jan Kowalski" oninput="searchTable()" disabled style="cursor: not-allowed;"> <!--Usuń disabled style przed weselem-->
+            <div id="table-result">
+                <small>Twój numer stolika to:</small>
+                <div id="table-number" style="font-size: 3rem; font-weight: bold;">-</div>
+            </div>
+        </div>
+    </section>
+	
 
+	<!--Uzupełnij info-->   
     <section id="info" class="section" style="background-color: #fff;">
         <h2 class="section-title">Sprawy Organizacyjne</h2>
         
@@ -358,7 +366,7 @@
                 <p style="margin-top: 10px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             </div>		
     </section>
-	
+	<!--Uzupełnij usługodawców-->   
 <section id="vendors" class="section">
         <h2 class="section-title">Nasi Usługodawcy</h2>
         <p style="margin-bottom: 30px; font-style: italic;">Ludzie, którzy pomagają nam spełnić marzenia:</p>
@@ -366,8 +374,8 @@
         <div class="locations">
             <div class="card">
                 <h3>Fotograf</h3>
-                <p><strong>Photography</strong></p>
-                <a href="#" target="_blank" class="btn">Zobacz</a>
+                <p><strong>Krzysztof Wojtoń Fotograf Ślubny</strong></p>
+                <a href="https://krzysztofwojton.pl" target="_blank" class="btn">Zobacz</a>
             </div>
 
             <div class="card">
@@ -398,7 +406,7 @@
                 Wasze spojrzenie na nasz ślub jest dla nas najcenniejszą pamiątką. 
                 Będziemy wdzięczni za każde ujęcie przesłane do wspólnego albumu!
             </p>
-        <!--Wstaw link-->   
+        <!--Wstaw link do dysku-->   
             <a href="#" target="_blank" class="btn" style="padding: 18px 50px; font-weight: 600; letter-spacing: 1px;">
                 DODAJ ZDJĘCIA NA DYSK
             </a>
@@ -424,7 +432,7 @@
             <div class="card">
                 <h3>Para Młoda</h3>
                 <p><strong>Julia:</strong> <a href="tel:+48603272075" style="color: inherit; text-decoration: none;">+48 603 272 075</a></p>
-                <p><strong>Krystian:</strong> <a href="tel:+48000000000" style="color: inherit; text-decoration: none;">+48 000 000 000</a></p>
+                <p><strong>Krystian:</strong> <a href="tel:+48601814061" style="color: inherit; text-decoration: none;">+48 601 814 061</a></p>
             </div>
 
             <div class="card">
