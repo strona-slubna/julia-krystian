@@ -119,18 +119,37 @@
         }
 
         /* --- SEKCJA HERO --- */
-        .hero {
-            height: 90vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('nowe_tlo.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: var(--white);
-            text-align: center;
-        }
+/* Główne ustawienia sekcji Hero */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Tło dla DESKTOPU (komputery i duże tablety) */
+@media (min-width: 769px) {
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('nowe_tlo.png');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* Tło dla MOBILE (telefony) */
+@media (max-width: 768px) {
+    .hero {
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('tlo_mobile.png');
+        background-size: cover;
+        background-position: center;
+    }
+}
 		
 
 
@@ -291,7 +310,90 @@
     padding: 0 12px;
     letter-spacing: 0.02em;
 }
+/* --- COUNTDOWN --- */
+#wedding-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+    flex-wrap: nowrap;
+}
 
+.cd-box {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 10px;
+    padding: 14px 18px;
+    min-width: 68px;
+    text-align: center;
+}
+
+.cd-num {
+    display: block;
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: white;
+}
+
+.cd-label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    margin-top: 6px;
+    color: white;
+}
+
+.cd-sep {
+    font-size: 1.8rem;
+    opacity: 0.4;
+    color: white;
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+@media (max-width: 480px) {
+    #wedding-countdown { gap: 3px; }
+    .cd-box { padding: 8px 0; width: 64px; min-width: 0; }
+    .cd-num { font-size: 1.4rem; }
+    .cd-label { font-size: 0.5rem; letter-spacing: 0.5px; }
+    .cd-sep { font-size: 1.2rem; margin-bottom: 14px; }
+}
+section[id], header[id] {
+    scroll-margin-top: var(--nav-height);
+}
+.gold-text {
+    /* Zmieniony kierunek na ukośny i dodane więcej punktów przejścia dla blasku */
+    background: linear-gradient(
+        135deg, 
+        #bf953f 0%, 
+        #fcf6ba 25%, 
+        #b38728 50%, 
+        #fcf6ba 75%, 
+        #aa771c 100%
+    );
+    
+    /* Rozciąga gradient na całą szerokość elementu */
+    background-size: 100% auto;
+    display: inline-block; /* Ważne, by gradient trzymał się tekstu */
+
+    /* Standardowe linie dla efektu clip */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    
+    /* Uwypuklenie */
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+    
+    font-size: 5rem;
+    margin-bottom: 10px;
+    width: 100%; /* Wymusza rozłożenie gradientu na całej dostępnej linii */
+}
     </style>
 </head>
 <body>
@@ -315,11 +417,13 @@
         </div>
     </nav>
 
-    <header id="hero" class="hero">
-        <p>Pobieramy się!</p>
-        <h1>Julia & Krystian</h1>
-        <p>31 Grudnia 2026</p>
-    </header>
+<header id="hero" class="hero">
+    <p  style="color: #5D101D">Pobieramy się!</p>
+    <h1 class="gold-text">Julia & Krystian</h1>
+    <p  style="color: #5D101D"><b>31 Grudnia 2026</b></p>
+
+   
+</header>
 
     <section id="details" class="section">
         <h2 class="section-title">Gdzie i Kiedy</h2>
@@ -562,18 +666,27 @@ const guests = {
     "mateusz aszklar": 0
 };
 
-        function searchTable() {
-            const input = document.getElementById('guest-input').value.toLowerCase().trim();
-            const resultDiv = document.getElementById('table-result');
-            const numberDiv = document.getElementById('table-number');
+function searchTable() {
+    const input = document.getElementById('guest-input').value.toLowerCase().trim();
+    const resultDiv = document.getElementById('table-result');
+    const numberDiv = document.getElementById('table-number');
 
-            if (guests[input]) {
-                numberDiv.innerText = guests[input];
-                resultDiv.style.display = 'block';
-            } else {
-                resultDiv.style.display = 'none';
-            }
-        }
+    if (guests[input]) {
+        resultDiv.style.background = '#800020';
+        numberDiv.style.fontSize = '3rem';
+        numberDiv.style.fontWeight = 'bold';
+        numberDiv.innerText = guests[input];
+        resultDiv.style.display = 'block';
+    } else if (input.length >= 10) {
+        resultDiv.style.background = '#555';
+        numberDiv.style.fontSize = '1rem';
+        numberDiv.style.fontWeight = 'normal';
+        numberDiv.innerText = 'Nie znaleziono gościa o tym imieniu';
+        resultDiv.style.display = 'block';
+    } else {
+        resultDiv.style.display = 'none';
+    }
+}
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -584,7 +697,28 @@ const guests = {
                 });
             });
         });
-
+// --- COUNTDOWN TIMER ---
+(function() {
+    const target = new Date('2026-12-31T14:00:00');
+    function tick() {
+        const diff = target - new Date();
+        if (diff <= 0) {
+            document.getElementById('wedding-countdown').innerHTML =
+                '<p style="font-size:1.5rem; opacity:0.9;">Dzisiaj jest ten dzień!</p>';
+            return;
+        }
+        const d = Math.floor(diff / 86400000);
+        const h = Math.floor((diff % 86400000) / 3600000);
+        const m = Math.floor((diff % 3600000) / 60000);
+        const s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('cd-days').textContent = d;
+        document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+        document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+        document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+    }
+    tick();
+    setInterval(tick, 1000);
+})();
     </script>
 </body>
 </html>
