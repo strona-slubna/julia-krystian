@@ -394,6 +394,15 @@ section[id], header[id] {
     margin-bottom: 10px;
     width: 100%; /* Wymusza rozłożenie gradientu na całej dostępnej linii */
 }
+		   .mobile-break {
+    display: none; /* Ukryte na komputerach */
+}
+
+@media (max-width: 768px) {
+    .mobile-break {
+        display: inline; /* Pokazuje się tylko na telefonach */
+    }
+}
     </style>
 </head>
 <body>
