@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 	 
-       <style>
+    <style>
         /* --- USTAWIENIA OGÓLNE I KOLORY --- */
         :root {
             --primary-color: #800020; /* Bordowy / Burgundy */
@@ -119,39 +119,36 @@
         }
 
         /* --- SEKCJA HERO --- */
-/* Główne ustawienia sekcji Hero */
-.hero {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
 
-/* Tło dla DESKTOPU (komputery i duże tablety) */
-@media (min-width: 769px) {
-    .hero {
-        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('nowe_tlo.png');
-        background-size: cover;
-        background-position: center;
-    }
-}
+        /* Tło dla DESKTOPU */
+        @media (min-width: 769px) {
+            .hero {
+                background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('nowe_tlo.png');
+                background-size: cover;
+                background-position: center;
+            }
+        }
 
-/* Tło dla MOBILE (telefony) */
-@media (max-width: 768px) {
-    .hero {
-        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('tlo_mobilee.png');
-        background-size: cover;
-        background-position: center;
-    }
-}
-		
-
+        /* Tło dla MOBILE */
+        @media (max-width: 768px) {
+            .hero {
+                background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('tlo_mobilee.png');
+                background-size: cover;
+                background-position: center;
+            }
+        }
 
         .hero h1 {
             font-size: 5rem;
@@ -252,7 +249,7 @@
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
- /* --- STOPKA --- */
+        /* --- STOPKA --- */
         footer {
             background-color: #2c2c2c;
             color: var(--white);
@@ -265,150 +262,155 @@
             .hero h1 { font-size: 3.5rem; }
             
             .locations { 
-                grid-template-columns: 1fr; /* Ustawia karty jedna pod drugą */
-                gap: 20px; /* Zmniejsza odstępy między kartami na telefonie */
+                grid-template-columns: 1fr; 
+                gap: 20px; 
             }
 
             .card {
-                width: 100%; /* Wymusza pełną szerokość karty */
-                padding: 20px; /* Zmniejsza wewnętrzne marginesy kart na telefonie, żeby było więcej miejsca na tekst */
+                width: 100%; 
+                padding: 20px; 
             }
 
             .section-title { font-size: 2.5rem; }
         } 
-.card--locked {
-    position: relative;
-    overflow: hidden;
-}
 
-.card__blur-content {
-    filter: blur(4px);
-    user-select: none;
-    pointer-events: none;
-}
+        .card--locked {
+            position: relative;
+            overflow: hidden;
+        }
 
-.card__overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 0.35);
-    gap: 8px;
-}
+        .card__blur-content {
+            filter: blur(4px);
+            user-select: none;
+            pointer-events: none;
+        }
 
-.card__lock {
-    font-size: 2rem;
-}
+        .card__overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.35);
+            gap: 8px;
+        }
 
-.card__overlay-text {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #555;
-    text-align: center;
-    padding: 0 12px;
-    letter-spacing: 0.02em;
-}
-/* --- COUNTDOWN --- */
-#wedding-countdown {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    margin-top: 32px;
-    flex-wrap: nowrap;
-}
+        .card__lock {
+            font-size: 2rem;
+        }
 
-.cd-box {
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 10px;
-    padding: 14px 18px;
-    min-width: 68px;
-    text-align: center;
-}
+        .card__overlay-text {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #555;
+            text-align: center;
+            padding: 0 12px;
+            letter-spacing: 0.02em;
+        }
 
-.cd-num {
-    display: block;
-    font-size: 2.2rem;
-    font-weight: 600;
-    line-height: 1;
-    letter-spacing: -1px;
-    color: white;
-}
+        /* --- COUNTDOWN --- */
+        #wedding-countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 32px;
+            flex-wrap: nowrap;
+        }
 
-.cd-label {
-    display: block;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    opacity: 0.7;
-    margin-top: 6px;
-    color: white;
-}
+        .cd-box {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 10px;
+            padding: 14px 18px;
+            min-width: 68px;
+            text-align: center;
+        }
 
-.cd-sep {
-    font-size: 1.8rem;
-    opacity: 0.4;
-    color: white;
-    line-height: 1;
-    margin-bottom: 14px;
-}
+        .cd-num {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1;
+            letter-spacing: -1px;
+            color: white;
+        }
 
-@media (max-width: 480px) {
-    #wedding-countdown { gap: 3px; }
-    .cd-box { padding: 8px 0; width: 64px; min-width: 0; }
-    .cd-num { font-size: 1.4rem; }
-    .cd-label { font-size: 0.5rem; letter-spacing: 0.5px; }
-    .cd-sep { font-size: 1.2rem; margin-bottom: 14px; }
-}
-section[id], header[id] {
-    scroll-margin-top: var(--nav-height);
-}
-.gold-text {
-    /* Zmieniony kierunek na ukośny i dodane więcej punktów przejścia dla blasku */
-    background: linear-gradient(
-        135deg, 
-        #bf953f 0%, 
-        #fcf6ba 25%, 
-        #b38728 50%, 
-        #fcf6ba 75%, 
-        #aa771c 100%
-    );
-    
-    /* Rozciąga gradient na całą szerokość elementu */
-    background-size: 100% auto;
-    display: inline-block; /* Ważne, by gradient trzymał się tekstu */
+        .cd-label {
+            display: block;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-top: 6px;
+            color: white;
+        }
 
-    /* Standardowe linie dla efektu clip */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    
-    /* Uwypuklenie */
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
-    
-    font-size: 5rem;
-    margin-bottom: 10px;
-    width: 100%; /* Wymusza rozłożenie gradientu na całej dostępnej linii */
-}
-		   .mobile-break {
-    display: none; /* Ukryte na komputerach */
-}
+        .cd-sep {
+            font-size: 1.8rem;
+            opacity: 0.4;
+            color: white;
+            line-height: 1;
+            margin-bottom: 14px;
+        }
 
-@media (max-width: 768px) {
-    .mobile-break {
-        display: inline; /* Pokazuje się tylko na telefonach */
-    }
-}
+        @media (max-width: 480px) {
+            #wedding-countdown { gap: 3px; }
+            .cd-box { padding: 8px 0; width: 64px; min-width: 0; }
+            .cd-num { font-size: 1.4rem; }
+            .cd-label { font-size: 0.5rem; letter-spacing: 0.5px; }
+            .cd-sep { font-size: 1.2rem; margin-bottom: 14px; }
+        }
+
+        section[id], header[id] {
+            scroll-margin-top: var(--nav-height);
+        }
+
+        .gold-text {
+            background: linear-gradient(
+                135deg, 
+                #bf953f 0%, 
+                #fcf6ba 25%, 
+                #b38728 50%, 
+                #fcf6ba 75%, 
+                #aa771c 100%
+            );
+            background-size: 100% auto;
+            display: inline-block; 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.3));
+            font-size: 5rem;
+            margin-bottom: 10px;
+            width: 100%; 
+        }
+
+		.mobile-break {
+            display: none; 
+        }
+
+        @media (max-width: 768px) {
+            .mobile-break {
+                display: inline; 
+            }
+        }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const SUPABASE_URL = 'https://woebqhcstvzbtytmjeox.supabase.co';
+        const SUPABASE_ANON_KEY = 'sb_publishable_3GoVwmOCzEpa3PJfuLj6Mw_I4nq1aOm';
+        
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    </script>
 </head>
 <body>
-<nav class="navbar">
+
+    <nav class="navbar">
         <a href="#hero" class="nav-logo">J&K</a>
-        
         <ul class="nav-menu">
             <li class="nav-item"><a href="#details" class="nav-link">Gdzie i Kiedy</a></li>
             <li class="nav-item"><a href="#rsvp" class="nav-link">Potwierdzenie</a></li>
@@ -418,7 +420,6 @@ section[id], header[id] {
 		    <li class="nav-item"><a href="#photos" class="nav-link">Galeria</a></li>
             <li class="nav-item"><a href="#contact" class="nav-link">Kontakt</a></li>	
         </ul>
-
         <div class="hamburger">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -426,13 +427,12 @@ section[id], header[id] {
         </div>
     </nav>
 
-<header id="hero" class="hero">
-    <p  style="color: #5D101D">Pobieramy się!</p>
-    <h1 class="gold-text">Julia & Krystian</h1>
-    <p  style="color: #5D101D"><b>31 Grudnia 2026</b></p>
+    <header id="hero" class="hero">
+        <p style="color: #5D101D">Pobieramy się!</p>
+        <h1 class="gold-text">Julia & Krystian</h1>
+        <p style="color: #5D101D"><b>31 Grudnia 2026</b></p>
 
-   
-</header>
+    </header>
 
     <section id="details" class="section">
         <h2 class="section-title">Gdzie i Kiedy</h2>
@@ -460,17 +460,16 @@ section[id], header[id] {
         <p style="margin-top: 20px;">Kliknij poniżej, aby otworzyć formularz:</p>
         <a href="https://forms.gle/HJLPzkZZjoW7Gyj46" target="_blank" class="btn">Wypełnij formularz RSVP</a>
     </section>
-	 	<!--Zamień RSVP na stoliki-->   
+	    
     <section id="tables" class="section" style="background-color: #f2efe9;"> 
         <h2 class="section-title">Twój Stolik</h2>
         <p style="margin-bottom: 25px;">Wpisz swoje imię i nazwisko, aby <br class="mobile-break">sprawdzić, gdzie siedzisz:</p>
-		
-		 	<!--Usuń przed weselem-->     
+		<!--Usuń przed weselem--> 
 		<p style="font-size: 0.85rem; color: #888; margin-bottom: 25px; font-style: italic;">
-    (Wyszukiwarka zostanie uruchomiona <br class="mobile-break">tuż przed weselem)</p> <!--U-->
+        (Wyszukiwarka zostanie uruchomiona <br class="mobile-break">tuż przed weselem)</p> <!--U-->
 	
         <div class="table-search-container">
-<input type="text" id="guest-input" placeholder="Np. Jan Kowalski" oninput="searchTable()" disabled style="cursor: not-allowed;"> <!--Usuń disabled style przed weselem-->
+            <input type="text" id="guest-input" placeholder="Np. Jan Kowalski" oninput="searchTable()" > <!--Usuń disabled style przed weselem-->
             <div id="table-result">
                 <small>Twój numer stolika to:</small>
                 <div id="table-number" style="font-size: 3rem; font-weight: bold;">-</div>
@@ -478,136 +477,78 @@ section[id], header[id] {
         </div>
     </section>
 	
-
 	<!--Uzupełnij info-->   
-<section id="info" class="section" style="background-color: #fff;">
-    <h2 class="section-title">Sprawy Organizacyjne</h2>
-    
-    <div class="locations">
-        <div class="card">
-            <h3>Prezenty</h3> 
-            <p><img src="nowe_pikt.png" alt="Zamiast kwiatów prosimy o zdrapki albo kupony lotto" height="100px"></p>
-            <p><img src="nowe_pikt2.png" alt="Zamiast prezentów prosimy o pieniądze na zakup mieszkania" height="100px"></p>
-        </div>
-
-        <div class="card card--locked">
-            <div class="card__blur-content">
-                <h3>Transport</h3>
-                <p><strong>Dojazd:</strong> Zapewniamy transport z domów Państwa Młodych do kościoła, a następnie na salę weselną.</p>
-                <p style="margin-top: 10px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
-            <div class="card__overlay">
-                <p class="card__overlay-text">Informacje pojawią się bliżej wesela</p>
-            </div>
-        </div>
-
-        <div class="card card--locked">
-            <div class="card__blur-content">
-                <h3>Parkingi</h3>
-                <p><strong>Pod Kościołem</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                <p style="margin-top: 10px;"><strong>Pod salą weselną</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
-            <div class="card__overlay">
-                <p class="card__overlay-text">Informacje pojawią się bliżej wesela</p>
-            </div>
-        </div>
-
-        <div class="card card--locked">
-            <div class="card__blur-content">
-                <h3>Sala zabaw</h3>
-                <p>Sala weselna zapewnia salę zabaw dla najmłodszych</p>
-                <p style="margin-top: 10px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-            </div>
-            <div class="card__overlay">
-                <p class="card__overlay-text">Informacje pojawią się bliżej wesela</p>
-            </div>
-        </div>
-    </div>
-</section>
-	<!--Uzupełnij usługodawców-->   
-<section id="vendors" class="section">
-        <h2 class="section-title">Nasi Usługodawcy</h2>
-        <p style="margin-bottom: 30px; font-style: italic;">Ludzie, którzy pomagają nam <br class="mobile-break">spełnić marzenia:</p>
-        
+    <section id="info" class="section" style="background-color: #fff;">
+        <h2 class="section-title">Sprawy Organizacyjne</h2>
         <div class="locations">
             <div class="card">
-                <h3>Fotograf</h3>
-                <p><strong>Krzysztof Wojtoń Fotograf Ślubny</strong></p>
-                <a href="https://www.facebook.com/krzysztofwojtonfotografia/?locale=pl_PL" target="_blank" class="btn">Zobacz</a>
+                <h3>Prezenty</h3> 
+                <p><img src="nowe_pikt.png" alt="Zamiast kwiatów prosimy o zdrapki" height="100px"></p>
+                <p><img src="nowe_pikt2.png" alt="Zamiast prezentów prosimy o pieniądze" height="100px"></p>
             </div>
+            <div class="card card--locked">
+                <div class="card__blur-content">
+                    <h3>Transport</h3>
+                    <p><strong>Dojazd:</strong> Zapewniamy transport z domów Państwa Młodych do kościoła.</p>
+                </div>
+                <div class="card__overlay"><p class="card__overlay-text">Informacje pojawią się bliżej wesela</p></div>
+            </div>
+            <div class="card card--locked">
+                <div class="card__blur-content">
+                    <h3>Parkingi</h3>
+                    <p><strong>Pod Kościołem</strong> Dostępne miejsca parkingowe dla gości.</p>
+                </div>
+                <div class="card__overlay"><p class="card__overlay-text">Informacje pojawią się bliżej wesela</p></div>
+            </div>
+            <div class="card card--locked">
+                <div class="card__blur-content">
+                    <h3>Sala zabaw</h3>
+                    <p>Sala weselna zapewnia salę zabaw dla najmłodszych</p>
+                </div>
+                <div class="card__overlay"><p class="card__overlay-text">Informacje pojawią się bliżej wesela</p></div>
+            </div>
+        </div>
+    </section>
 
-            <div class="card">
-                <h3>Tort & Słodkości</h3>
-                <p><strong>My Sweet Life Słodkie <br class="mobile-break">Dekoracje Basi <br> Barbara Buda</strong></p>
-                <a href="https://www.facebook.com/barbarabuda2002?locale=pl_PL" target="_blank" 
-				class="btn">Zobacz</a>
-            </div>
-
-            <div class="card">
-                <h3>Dekoracje</h3>
-                <p><strong>Deko Flora <br> Dekoracje Elżbieta Knap</strong></p>
-                <a href="https://www.facebook.com/DekoracjeElzbietaKnap?rdid=0MYkvpJ98aRlk0Qn&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1CTgDjKzX2%2F#" target="_blank" class="btn">Zobacz</a>
-            </div>
-
-            <div class="card">
-                <h3>Muzyka</h3>
-                <p><strong>DJ Baca <br> Robert Jaguś-Jagiełka</strong></p>
-                <a href="https://www.facebook.com/robertwczerni?locale=pl_PL" class="btn">Zobacz</a>
-            </div>
+    <section id="vendors" class="section">
+        <h2 class="section-title">Nasi Usługodawcy</h2>
+        <div class="locations">
+            <div class="card"><h3>Fotograf</h3><p><strong>Krzysztof Wojtoń</strong></p><a href="https://www.facebook.com/krzysztofwojtonfotografia/" target="_blank" class="btn">Zobacz</a></div>
+            <div class="card"><h3>Tort & Słodkości</h3><p><strong>My Sweet Life - Barbara Buda</strong></p><a href="https://www.facebook.com/barbarabuda2002" target="_blank" class="btn">Zobacz</a></div>
+            <div class="card"><h3>Dekoracje</h3><p><strong>Deko Flora - Elżbieta Knap</strong></p><a href="https://www.facebook.com/DekoracjeElzbietaKnap" target="_blank" class="btn">Zobacz</a></div>
+            <div class="card"><h3>Muzyka</h3><p><strong>DJ Baca - Robert Jaguś-Jagiełka</strong></p><a href="https://www.facebook.com/robertwczerni" target="_blank" class="btn">Zobacz</a></div>
         </div>
     </section>
 
     <section id="photos" class="section">
-        <div style="background: var(--white); padding: 60px 20px; border: 1px solid var(--primary-color); border-radius: 8px; box-shadow: 0 10px 30px rgba(166, 139, 117, 0.1);">
-            <h2 class="section-title" style="margin-bottom: 20px;">Wasze Zdjęcia <br class="mobile-break">i Filmy</h2>
-            <p style="max-width: 600px; margin: 0 auto 30px auto;">
-                Wasze spojrzenie na nasz ślub jest dla nas najcenniejszą pamiątką. 
-                Będziemy wdzięczni za każde ujęcie przesłane do wspólnego albumu!
-            </p>
-        <!--Wstaw link do dysku-->   
-            <a href="#" target="_blank" class="btn" style="padding: 18px 50px; font-weight: 600; letter-spacing: 1px;">
-                DODAJ ZDJĘCIA <br class="mobile-break">NA DYSK
-            </a>
-            
-            <p style="line-height: 3; margin-top: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; opacity: 0.6;">
-                Dziękujemy, że tworzycie <br class="mobile-break">z nami tę historię!
-            </p>
-			
-        
-                    <h2 class="section-title" style="margin-bottom: 20px;">Nasza Galeria</h2>
-                    <p style="margin-bottom: 20px;">Tutaj po weselu pojawią się zdjęcia <br class="mobile-break">od naszego fotografa.</p>
-		<!--Usuń onclick i opacity; zamień # na link; zmień napis na przycisku -->
-				    <a href="#" target="_blank" onclick="return false;" class="btn" style="padding: 18px 50px; font-weight: 600; letter-spacing: 1px; opacity: 0.6;">
-                DOSTĘPNE PO ŚLUBIE</a>
-			</div>
+        <div style="background: var(--white); padding: 60px 20px; border: 1px solid var(--primary-color); border-radius: 8px;">
+            <h2 class="section-title">Wasze Zdjęcia <br class="mobile-break">i Filmy</h2>
+            <a href="#" target="_blank" class="btn">DODAJ ZDJĘCIA NA DYSK</a>
+            <h2 class="section-title" style="margin-top: 40px;">Nasza Galeria</h2>
+            <a href="#" target="_blank" onclick="return false;" class="btn" style="opacity: 0.6;">DOSTĘPNE PO ŚLUBIE</a>
+		</div>
     </section>
 
-<section id="contact" class="section">
+    <section id="contact" class="section">
         <h2 class="section-title">Kontakt</h2>
-        <p style="margin-bottom: 40px;">W razie jakichkolwiek pytań, jesteśmy <br class="mobile-break">do Waszej dyspozycji:</p>
-        <!--Uzupełnij numery--> 
         <div class="locations">
             <div class="card">
                 <h3>Para Młoda</h3>
-                <p><strong>Julia:</strong> <a href="tel:+48603272075" style="color: inherit; text-decoration: none;">+48 603 272 075</a></p>
-                <p><strong>Krystian:</strong> <a href="tel:+48601814061" style="color: inherit; text-decoration: none;">+48 601 814 061</a></p>
+                <p><strong>Julia:</strong> +48 603 272 075</p>
+                <p><strong>Krystian:</strong> +48 601 814 061</p>
             </div>
-
             <div class="card">
                 <h3>Świadkowie</h3>
-                <p><strong>Wiktoria:</strong> <a href="tel:+48530186007" style="color: inherit; text-decoration: none;">+48 530 186 007</a></p>
-                <p><strong>Kacper:</strong> <a href="tel:+48669095624" style="color: inherit; text-decoration: none;">+48 669 095 624</a></p>
-                <p style="font-size: 0.8rem; margin-top: 10px; font-style: italic;">(Kontakt w sprawach organizacyjnych <br class="mobile-break">w dniu ślubu)</p>
+                <p><strong>Wiktoria:</strong> +48 530 186 007</p>
+                <p><strong>Kacper:</strong> +48 669 095 624</p>
             </div>
         </div>
     </section>
 
     <footer>
         <h2>Julia & Krystian</h2>
-        <p>Nie możemy sie doczekać!</p>
-        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.5;">© 2026 Strona Ślubna</p>
+        <p>Nie możemy się doczekać!</p>
     </footer>
-
 
     <script>
         // --- 1. OBSŁUGA MENU MOBILNEGO ---
@@ -615,89 +556,55 @@ section[id], header[id] {
         const navMenu = document.querySelector(".nav-menu");
         const navLinks = document.querySelectorAll(".nav-link");
 
-        // Kliknięcie w hamburger otwiera/zamyka menu
         hamburger.addEventListener("click", () => {
             hamburger.classList.toggle("active");
             navMenu.classList.toggle("active");
         });
 
-        // Kliknięcie w dowolny link zamyka menu (dla wygody na telefonie)
         navLinks.forEach(n => n.addEventListener("click", () => {
             hamburger.classList.remove("active");
             navMenu.classList.remove("active");
         }));
-		// --- LISTA GOŚCI (UZUPEŁNIJ TUTAJ) ---
-const guests = {
-    "julia belcik": 1,
-    "krystian józefowicz": 1,
-    "agata belcik": 0,
-    "artur belcik": 0,
-    "edyta józefowicz": 0,
-    "grzegorz józefowicz": 0,
-    "wiktoria belcik": 0,
-    "krzysztof buda": 0,
-    "kacper józefowicz": 0,
-    "maria rogala": 0,
-    "dariusz rogala": 0,
-    "anna gunia": 0,
-    "tomasz gunia": 0,
-    "staś gunia": 0,
-    "jaś gunia": 0,
-    "paulina rogala": 0,
-    "filip czarnik": 0,
-    "tobiasz czarnik": 0,
-    "łukasz braja": 0,
-    "renata braja": 0,
-    "helena rogala": 0,
-    "rafał rogala": 0,
-    "agnieszka rogala": 0,
-    "eryk rogala": 0,
-    "janina belcik": 0,
-    "zdzisław belcik": 0,
-    "michalina belcik": 0,
-    "tomasz belcik": 0,
-    "kinga belcik": 0,
-    "zuzanna belcik": 0,
-    "jabuk belcik": 0,
-    "iwona drozd": 0,
-    "marcin drozd": 0,
-    "jolanta cysarz": 0,
-    "piotr cysarz": 0,
-    "paweł cysarz": 0,
-    "łukasz cysarz": 0,
-    "anna sobieszczyk": 0,
-    "mateusz krępulec": 0,
-    "oliwia sobieszczyk": 0,
-    "maja sobieszczyk": 0,
-    "lila krępulec": 0,
-    "oliwier krępulec": 0,
-    "mariola aszklar": 0,
-    "mirosław aszklar": 0,
-    "magdalena aszklar": 0,
-    "mateusz aszklar": 0
-};
 
-function searchTable() {
-    const input = document.getElementById('guest-input').value.toLowerCase().trim();
-    const resultDiv = document.getElementById('table-result');
-    const numberDiv = document.getElementById('table-number');
+        // --- 2. POPRAWNA WYSZUKIWARKA STOLIKÓW Z SUPABASE ---
+        async function searchTable() {
+            const input = document.getElementById('guest-input').value.toLowerCase().trim();
+            const resultDiv = document.getElementById('table-result');
+            const numberDiv = document.getElementById('table-number');
 
-    if (guests[input]) {
-        resultDiv.style.background = '#800020';
-        numberDiv.style.fontSize = '3rem';
-        numberDiv.style.fontWeight = 'bold';
-        numberDiv.innerText = guests[input];
-        resultDiv.style.display = 'block';
-    } else if (input.length >= 10) {
-        resultDiv.style.background = '#555';
-        numberDiv.style.fontSize = '1rem';
-        numberDiv.style.fontWeight = 'normal';
-        numberDiv.innerText = 'Nie znaleziono gościa o tym imieniu';
-        resultDiv.style.display = 'block';
-    } else {
-        resultDiv.style.display = 'none';
-    }
-}
+            if (input.length < 3) {
+                resultDiv.style.display = 'none';
+                return;
+            }
+
+            // Zapytanie do tabeli 'wedding_guests'
+            const { data, error } = await supabaseClient
+                .from('wedding_guests')
+                .select('table_number')
+                .eq('name', input)
+                .maybeSingle();
+
+            if (error) {
+                console.error("Błąd pobierania danych ze strefy stolików:", error);
+                return;
+            }
+
+            if (data) {
+                resultDiv.style.background = '#800020';
+                numberDiv.style.fontSize = '3rem';
+                numberDiv.style.fontWeight = 'bold';
+                numberDiv.innerText = data.table_number;
+                resultDiv.style.display = 'block';
+            } else if (input.length >= 10) {
+                resultDiv.style.background = '#555';
+                numberDiv.style.fontSize = '1rem';
+                numberDiv.style.fontWeight = 'normal';
+                numberDiv.innerText = 'Nie znaleziono gościa o tym imieniu i nazwisku';
+                resultDiv.style.display = 'block';
+            } else {
+                resultDiv.style.display = 'none';
+            }
+        }
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -708,28 +615,32 @@ function searchTable() {
                 });
             });
         });
-// --- COUNTDOWN TIMER ---
-(function() {
-    const target = new Date('2026-12-31T14:00:00');
-    function tick() {
-        const diff = target - new Date();
-        if (diff <= 0) {
-            document.getElementById('wedding-countdown').innerHTML =
-                '<p style="font-size:1.5rem; opacity:0.9;">Dzisiaj jest ten dzień!</p>';
-            return;
-        }
-        const d = Math.floor(diff / 86400000);
-        const h = Math.floor((diff % 86400000) / 3600000);
-        const m = Math.floor((diff % 3600000) / 60000);
-        const s = Math.floor((diff % 60000) / 1000);
-        document.getElementById('cd-days').textContent = d;
-        document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-        document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-        document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
-    }
-    tick();
-    setInterval(tick, 1000);
-})();
+
+        // --- 3. SKRYPT ODPOWIEDZIALNY ZA COUNTDOWN ---
+        (function() {
+            const target = new Date('2026-12-31T14:00:00');
+            function tick() {
+                const countdownElem = document.getElementById('wedding-countdown');
+                if (!countdownElem) return;
+
+                const diff = target - new Date();
+                if (diff <= 0) {
+                    countdownElem.innerHTML = '<p style="font-size:1.5rem; opacity:0.9;">Dzisiaj jest ten dzień!</p>';
+                    return;
+                }
+                const d = Math.floor(diff / 86400000);
+                const h = Math.floor((diff % 86400000) / 3600000);
+                const m = Math.floor((diff % 3600000) / 60000);
+                const s = Math.floor((diff % 60000) / 1000);
+                
+                document.getElementById('cd-days').textContent = d;
+                document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+                document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+                document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
     </script>
 </body>
 </html>
